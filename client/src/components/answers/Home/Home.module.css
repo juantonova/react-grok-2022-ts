@@ -1,0 +1,40 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.list a {
+  text-decoration: none;
+}
+
+.card {
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgb(81 67 118 / 40%);
+  background-color: #ffbc5b;
+  display: flex;
+  flex-direction: column;
+  height: 17vh;
+  padding: 15px;
+  width: 350px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4520ab;
+}
+
+.card:hover {
+  border: 5px solid #4520ab;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 20px 40px rgb(81 67 118 / 40%);
+}

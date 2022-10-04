@@ -1,0 +1,12 @@
+.box {
+  width: 5rem;
+  height: 5rem;
+}
+
+.box-unactive {
+  background-color: gray;
+}
+
+.box-active {
+  background-color: red;
+}
