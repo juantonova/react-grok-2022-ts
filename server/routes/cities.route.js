@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { City } = require('../db/models');
 
-router.route('/')
+router
+  .route('/')
   .get((req, res) => {
     City.findAll()
       .then((allCities) => res.json(allCities))
@@ -13,21 +14,21 @@ router.route('/')
       .catch((error) => res.status(500).json(error));
   });
 
-router.route('/count')
-  .post(async (req, res) => {
-    const { limit } = req.body;
-    const { count } = await City.findAndCountAll();
-    const countPages = Math.ceil(count / limit);
-    const arrPages = [];
+router.route('/count').post(async (req, res) => {
+  const { limit } = req.body;
+  const { count } = await City.findAndCountAll();
+  const countPages = Math.ceil(count / limit);
+  const arrPages = [];
 
-    for (let index = 1; index <= countPages; index += 1) {
-      arrPages.push(index);
-    }
+  for (let index = 1; index <= countPages; index += 1) {
+    arrPages.push(index);
+  }
 
-    res.json(arrPages);
-  });
+  res.json(arrPages);
+});
 
-router.route('/:id')
+router
+  .route('/:id')
   .put((req, res) => {
     const { id } = req.params;
 

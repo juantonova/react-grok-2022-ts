@@ -12,42 +12,45 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
 
-  City.init({
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
+  City.init(
+    {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      title: {
+        type: DataTypes.STRING,
+      },
+      founded: {
+        type: DataTypes.INTEGER,
+      },
+      area: {
+        type: DataTypes.INTEGER,
+      },
+      officialLanguage: {
+        type: DataTypes.STRING,
+      },
+      population: {
+        type: DataTypes.INTEGER,
+      },
+      description: {
+        type: DataTypes.STRING,
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
     },
-    title: {
-      type: DataTypes.STRING,
-    },
-    founded: {
-      type: DataTypes.INTEGER,
-    },
-    area: {
-      type: DataTypes.INTEGER,
-    },
-    officialLanguage: {
-      type: DataTypes.STRING,
-    },
-    population: {
-      type: DataTypes.INTEGER,
-    },
-    description: {
-      type: DataTypes.STRING,
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-    },
-  }, {
-    sequelize,
-    modelName: 'City',
-  });
+    {
+      sequelize,
+      modelName: 'City',
+    }
+  );
   return City;
 };

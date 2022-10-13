@@ -4,7 +4,7 @@ const chalk = require('chalk');
 
 const getMessage = (dir) => {
   return chalk.bold.red(`Создай файл "${dir}/.env" на основе "${dir}/.env.example"\n`);
-}
+};
 
 const check = (dir) => {
   const envFile = path.join(dir, '.env');
@@ -13,7 +13,7 @@ const check = (dir) => {
     console.log(getMessage(dir));
     process.exit(1);
   }
-}
+};
 
 check('client');
 check('server');
