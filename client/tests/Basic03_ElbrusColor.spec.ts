@@ -6,7 +6,6 @@ test('Basic03_ElbrusColor', async ({ page }) => {
   const section = page.locator('.section');
   const h1 = page.locator('.h1');
 
-  await expect(section).toHaveClass('section');
   await expect(h1).toHaveClass('h1');
 
   await expect(section).toHaveCSS('background-color', 'rgb(69, 32, 171)');
