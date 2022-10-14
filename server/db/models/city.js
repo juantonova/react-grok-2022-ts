@@ -35,9 +35,6 @@ module.exports = (sequelize, DataTypes) => {
       population: {
         type: DataTypes.INTEGER,
       },
-      description: {
-        type: DataTypes.STRING,
-      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,

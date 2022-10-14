@@ -22,9 +22,6 @@ module.exports = {
       population: {
         type: Sequelize.INTEGER,
       },
-      description: {
-        type: Sequelize.STRING,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

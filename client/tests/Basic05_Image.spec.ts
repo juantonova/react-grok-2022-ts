@@ -8,7 +8,7 @@ const testSet = process.env.REACT_APP_TEST_SET ?? 'puzzles';
 
 test('Code', async () => {
   const css = await fs.readFile(
-    path.join(__dirname, `../src/components/${testSet}/Basic05_Image/Basic05_Image.css`),
+    path.join(__dirname, `../src/${testSet}/Basic05_Image/Basic05_Image.css`),
     'utf-8'
   );
 
@@ -18,8 +18,8 @@ test('Code', async () => {
 test('Basic05_Image', async ({ page }) => {
   await page.goto('http://localhost:3000/basic05');
 
-  const wrap = page.locator('#root .wrap-image');
-  const img = page.locator('#root .logo');
+  const wrap = page.locator('.wrap-image');
+  const img = page.locator('.logo');
 
   await expect(wrap).toHaveClass(/wrap-image/);
   await expect(img).toHaveClass(/logo/);

@@ -15,7 +15,7 @@ test.describe('UseReducer01_Cards', () => {
     const code = await fs.readFile(
       path.join(
         __dirname,
-        `../src/components/${testSet}/UseReducer01_Cards/UseReducer01_Cards.jsx`
+        `../src/${testSet}/UseReducer01_Cards/UseReducer01_Cards.tsx`
       ),
       'utf-8'
     );
@@ -24,7 +24,7 @@ test.describe('UseReducer01_Cards', () => {
     expect(code).not.toContain('useState');
 
     // Используется только один useReducer
-    expect(code.match(/useReducer\(/g).length).toBe(1);
+    expect(code.match(/useReducer\(/g)?.length).toBe(1);
 
     // Используйются типы экшенов NEXT_CARD и NEXT_BACKGROUND
     expect(code).toContain('NEXT_CARD');
@@ -34,7 +34,7 @@ test.describe('UseReducer01_Cards', () => {
   test('Component', async ({ page }) => {
     await page.goto('http://localhost:3000/usereducer01');
 
-    const card = page.locator('#root .card');
+    const card = page.locator('.card');
     const nextCard = page.locator('#next-card');
     const nextBg = page.locator('#next-bg');
 

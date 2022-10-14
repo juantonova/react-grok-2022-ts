@@ -14,7 +14,7 @@ test.describe('UseReducer03_AddAndDeleteCity', () => {
     const code = await fs.readFile(
       path.join(
         __dirname,
-        `../src/components/${testSet}/UseReducer03_AddAndDeleteCity/UseReducer03_AddAndDeleteCity.jsx`
+        `../src/${testSet}/UseReducer03_AddAndDeleteCity/UseReducer03_AddAndDeleteCity.tsx`
       ),
       'utf-8'
     );

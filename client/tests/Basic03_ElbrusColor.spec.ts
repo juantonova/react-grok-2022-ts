@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 test('Basic03_ElbrusColor', async ({ page }) => {
   await page.goto('http://localhost:3000/basic03');
 
-  const section = page.locator('#root .section');
-  const h1 = page.locator('#root .h1');
+  const section = page.locator('.section');
+  const h1 = page.locator('.h1');
 
   await expect(section).toHaveClass('section');
   await expect(h1).toHaveClass('h1');
